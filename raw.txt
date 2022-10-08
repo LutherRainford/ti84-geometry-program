@@ -1,175 +1,175 @@
-:
-:Float
-:ClrHome
-:0->T:0->U
-:Lbl 0
-:ClrHome
-:Menu(" GEOMETRY ","AREA",A,"VOLUME",B,"SURFACE AREA",C,"CIRCUMFERENCE",D,"EXIT",CL
-:
-:Lbl A
-:ClrHome
-:Menu(" AREA ","TRIANGLE",A1,"PARALLELOGRAM",A2,"TRAPEZOID",A3,"POLYGON",A4,"CIRCLE",A5,"ELLIPSE",A6,"<-",0
-:Lbl B
-:ClrHome
-:Menu(" VOLUME ","PRISM",B1,"PYRAMID",B2,"CYLINDER",B3,"CONE",B4,"SPHERE",B5,"FRUSTUM",B6,"<-",0
-:Lbl C
-:ClrHome
-:Menu(" SURFACE AREA ","CUBE",C1,"RECTANGULAR",C2,"CYLINDER",C3,"CONE",C4,"SPHERE",C5,"<-",0
-:
-:Lbl A1
-:ClrHome
-:Disp "A=BH/2
-:Prompt B,H
-:BH/2->Z
-:Goto ST
-:Lbl A2
-:ClrHome
-:Disp "A=BH
-:Prompt B,H
-:BH->Z
-:Goto ST
-:Lbl A3
-:ClrHome
-:Disp "A=(Bsmall1+Bsmall2)H/2
-:Input "Bsmall1=",A
-:Input "Bsmall2=",B
-:Input "H=",H
-:(A+B)H/2->Z:1->T
-:Goto ST
-:Lbl A4
-:ClrHome
-:Degree
-:Disp " POLYGON AREA
-:Input "SIDES=",A
-:Input "LENGTH=",B
-:AB^^2/(4tan(180/A))->Z
-:Goto ST
-:Lbl A5
-:ClrHome
-:Disp "A=piR^^2
-:Prompt R
-:piR^^2->Z:~1->T
-:Goto SU
-:Lbl A6
-:ClrHome
-:Disp "A=piab
-:Input "a=",A
-:Input "b=",B
-:piAB->Z
-:Goto SU
-:Lbl B1
-:ClrHome
-:Disp "V=LWH
-:Prompt L,W,H
-:LWH->Z:1->T
-:Goto ST
-:Lbl B2
-:ClrHome
-:Disp "V=BH/3
-:Prompt B,H
-:BH/3->Z
-:Goto ST
-:Lbl B3
-:ClrHome
-:Disp "V=piR^^2H
-:Prompt R,H
-:piR^^2H->Z
-:Goto SU
-:Lbl B4
-:ClrHome
-:Disp "V=piR^^2H/3
-:Prompt R,H
-:piR^^2H/3->Z
-:Goto SU
-:Lbl B5
-:ClrHome
-:Disp "V=4/3piR^^3
-:Prompt R
-:4/3piR^3->Z:~1->T
-:Goto SU
-:Lbl B6
-:ClrHome
-:Disp "V=pi(r^^2+rR+R^^2)H/3
-:Input "r=",Q
-:Input "R=",R
-:Input "H=",H
-:pi(Q^^2+QR+R^^2)H/3->Z:1->T
-:Goto SU
-:Lbl C1
-:ClrHome
-:Disp "SA=6S^^2
-:Prompt S
-:6S^^2->Z:~1->T
-:Goto ST
-:Lbl C2
-:ClrHome
-:Disp "SA=2(LW+WH+LH)
-:Prompt L,W,H
-:2(LW+WH+LH->Z:1->T
-:Goto ST
-:Lbl C3
-:ClrHome
-:Disp "2piR(H+R)
-:Prompt R,H
-:2piR(H+R->Z
-:Goto SU
-:Lbl C4
-:ClrHome
-:Disp "piRsqrt(H^^2+R^^2)+piR^^2
-:Prompt R,H
-:piRsqrt(H^^2+R^^2)+piR^^2->Z
-:Goto SU
-:Lbl C5
-:ClrHome
-:Disp "4piR^^2
-:Prompt R
-:4piR^^2->Z:~1->T
-:Goto SU
-:Lbl SU
-:ClrHome
-:Z/pi->Z:1->U
-:Lbl ST
-:ClrHome
-:Z->X
-:abs(Ans->Y
-:Ans->V
-:While Ans-round(Ans,0)
-: 1/fPart(Y->Y
-: conj(V[i]+imag([i]Vint(Ans->V
-: imag(Ans[i]
-:End
-:abs(round({Ans,Ans/X->|LA
-:|LA(1->E
-:|LA(2->F
-:
-:
-:1+int(log(E->A
-:1+int(log(F->B
-:Disp " "
-:If U=1
-:Output(4+T,26,"pi
-:If (E>=0 and F=1)
-:Output(4+T,27-A-U,E
-:If U=1
-:Disp Zpi
-:If E>=1 and F>1
-:Then
-: Output(4+T,27-A-B-U-1,E
-: Output(4+T,27-B-U-1,"/
-: Output(4+T,27-B-U,F
-: If U=0
-: Disp Z
-:End
-:Pause
-:Goto 0
-:Lbl D
-:Disp " C=piD"
-:Input "D=",D
-:D*pi->C
-:ClrHome
-:Output(1,1,"C="
-:Output(1,3,C
-:Pause
-:Goto 0
-:Lbl CL
-:ClrHome
+
+Float
+ClrHome
+0->T:0->U
+Lbl 0
+ClrHome
+Menu("         GEOMETRY         ","AREA",A,"VOLUME",B,"SURFACE AREA",C,"CIRCUMFERENCE",D,"EXIT",CL
+
+Lbl A
+ClrHome
+Menu("           AREA           ","TRIANGLE",A1,"PARALLELOGRAM",A2,"TRAPEZOID",A3,"POLYGON",A4,"CIRCLE",A5,"ELLIPSE",A6,"<-",0
+Lbl B
+ClrHome
+Menu("          VOLUME          ","PRISM",B1,"PYRAMID",B2,"CYLINDER",B3,"CONE",B4,"SPHERE",B5,"FRUSTUM",B6,"<-",0
+Lbl C
+ClrHome
+Menu("      SURFACE AREA        ","CUBE",C1,"RECTANGULAR",C2,"CYLINDER",C3,"CONE",C4,"SPHERE",C5,"<-",0
+
+Lbl A1
+ClrHome
+Disp "A=BH/2
+Prompt B,H
+BH/2->Z
+Goto ST
+Lbl A2
+ClrHome
+Disp "A=BH
+Prompt B,H
+BH->Z
+Goto ST
+Lbl A3
+ClrHome
+Disp "A=(Bsmall1+Bsmall2)H/2
+Input "Bsmall1=",A
+Input "Bsmall2=",B
+Input "H=",H
+(A+B)H/2->Z:1->T
+Goto ST
+Lbl A4
+ClrHome
+Degree
+Disp "       POLYGON AREA
+Input "SIDES=",A
+Input "LENGTH=",B
+AB^^2/(4tan(180/A))->Z
+Goto ST
+Lbl A5
+ClrHome
+Disp "A=piR^^2
+Prompt R
+piR^^2->Z:~1->T
+Goto SU
+Lbl A6
+ClrHome
+Disp "A=piab
+Input "a=",A
+Input "b=",B
+piAB->Z
+Goto SU
+Lbl B1
+ClrHome
+Disp "V=LWH
+Prompt L,W,H
+LWH->Z:1->T
+Goto ST
+Lbl B2
+ClrHome
+Disp "V=BH/3
+Prompt B,H
+BH/3->Z
+Goto ST
+Lbl B3
+ClrHome
+Disp "V=piR^^2H
+Prompt R,H
+piR^^2H->Z
+Goto SU
+Lbl B4
+ClrHome
+Disp "V=piR^^2H/3
+Prompt R,H
+piR^^2H/3->Z
+Goto SU
+Lbl B5
+ClrHome
+Disp "V=4/3piR^^3
+Prompt R
+4/3piR^3->Z:~1->T
+Goto SU
+Lbl B6
+ClrHome
+Disp "V=pi(r^^2+rR+R^^2)H/3
+Input "r=",Q
+Input "R=",R
+Input "H=",H
+pi(Q^^2+QR+R^^2)H/3->Z:1->T
+Goto SU
+Lbl C1
+ClrHome
+Disp "SA=6S^^2
+Prompt S
+6S^^2->Z:~1->T
+Goto ST
+Lbl C2
+ClrHome
+Disp "SA=2(LW+WH+LH)
+Prompt L,W,H
+2(LW+WH+LH->Z:1->T
+Goto ST
+Lbl C3
+ClrHome
+Disp "2piR(H+R)
+Prompt R,H
+2piR(H+R->Z
+Goto SU
+Lbl C4
+ClrHome
+Disp "piRsqrt(H^^2+R^^2)+piR^^2
+Prompt R,H
+piRsqrt(H^^2+R^^2)+piR^^2->Z
+Goto SU
+Lbl C5
+ClrHome
+Disp "4piR^^2
+Prompt R
+4piR^^2->Z:~1->T
+Goto SU
+Lbl SU
+ClrHome
+Z/pi->Z:1->U
+Lbl ST
+ClrHome
+Z->X
+abs(Ans->Y
+Ans->V
+While Ans-round(Ans,0)
+	1/fPart(Y->Y
+	conj(V[i]+imag([i]Vint(Ans->V
+	imag(Ans[i]
+End
+abs(round({Ans,Ans/X->|LA
+|LA(1->E
+|LA(2->F
+
+
+1+int(log(E->A
+1+int(log(F->B
+Disp " "
+If U=1
+Output(4+T,26,"pi
+If (E>=0 and F=1)
+Output(4+T,27-A-U,E
+If U=1
+Disp Zpi
+If E>=1 and F>1
+Then
+	Output(4+T,27-A-B-U-1,E
+	Output(4+T,27-B-U-1,"/
+	Output(4+T,27-B-U,F
+	If U=0
+	Disp Z
+End
+Pause 
+Goto 0
+Lbl D
+Disp "           C=piD"
+Input "D=",D
+D*pi->C
+ClrHome
+Output(1,1,"C="
+Output(1,3,C
+Pause 
+Goto 0
+Lbl CL
+ClrHome
